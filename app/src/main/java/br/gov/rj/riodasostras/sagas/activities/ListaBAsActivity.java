@@ -56,7 +56,7 @@ public class ListaBAsActivity extends AppCompatActivity {
         new ListaBAsActivity.getWebservice().execute("http://200.222.101.117:85/sagas/data.php?nom_usuario=aflorindo", null);
     }
 
-    public class getWebservice extends AsyncTask<String, Void, Integer> {
+    private class getWebservice extends AsyncTask<String, Void, Integer> {
 
         @Override
         protected Integer doInBackground(String... parametros) {

@@ -11,7 +11,7 @@
         android:id="@+id/ll_cabecalho"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="12dp"
+        android:padding="@dimen/fonte_padrao"
         android:background="#ffeeeeee"
         android:elevation="5dp">
 
@@ -32,7 +32,7 @@
             android:paddingLeft="8dp"
             android:paddingRight="8dp"
             android:gravity="center_vertical"
-            android:textSize="16dp"
+            android:textSize="@dimen/fonte_titulo"
             android:fontFamily="sans-serif-condensed"
             android:text="Olá, Alex Florindo" />
 
