@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#999"
+    tools:context="br.gov.rj.riodasostras.sagas.activities.PrincipalActivity">
+
+    <RelativeLayout
+        android:id="@+id/ll_cabecalho"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:background="#ffeeeeee"
+        android:elevation="5dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_account"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_account"
+            app:civ_border_width="1dp"
+            app:civ_border_color="#888"
+            app:civ_fill_color="#888" />
+
+        <TextView
+            android:id="@+id/tv_nome"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_toRightOf="@+id/iv_account"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:gravity="center_vertical"
+            android:textSize="16dp"
+            android:fontFamily="sans-serif-condensed"
+            android:text="Olá, Alex Florindo" />
+
+        <Button
+            android:id="@+id/bt_sair"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:gravity="center_vertical"
+            android:text="Sair"
+            android:textAlignment="center"
+            android:textColor="@color/colorAccent"
+            style="?android:attr/borderlessButtonStyle"
+            android:onClick="abrirListaBAs"/>
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

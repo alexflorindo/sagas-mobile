@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Espaçamentos -->
+    <dimen name="borda_padrao">8dp</dimen>
+    <dimen name="espacamento_padrao">4dp</dimen>
+
+    <!-- Fontes -->
+    <dimen name="fonte_titulo">16dp</dimen>
+    <dimen name="fonte_padrao">12dp</dimen>
+    <dimen name="fonte_reduzida">10dp</dimen>
+</resources>
