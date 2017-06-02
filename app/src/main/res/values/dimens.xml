@@ -3,6 +3,7 @@
     <!-- Espaçamentos -->
     <dimen name="borda_padrao">8dp</dimen>
     <dimen name="espacamento_padrao">4dp</dimen>
+    <dimen name="quebra_linha">2dp</dimen>
 
     <!-- Fontes -->
     <dimen name="fonte_titulo">16dp</dimen>

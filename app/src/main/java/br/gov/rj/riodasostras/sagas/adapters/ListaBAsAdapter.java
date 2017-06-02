@@ -18,6 +18,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import br.gov.rj.riodasostras.sagas.R;
+import br.gov.rj.riodasostras.sagas.interfaces.RViewOnClickListener;
 import br.gov.rj.riodasostras.sagas.util.Util;
 
 /**
@@ -28,6 +29,7 @@ public class ListaBAsAdapter extends RecyclerView.Adapter<ListaBAsAdapter.ViewHo
     private final static String FORMATO_DATA = "yyyy-MM-dd HH:mm:ss";
     private JSONArray mJSONArray;
     private Context mContext;
+    private RViewOnClickListener mClickListener;
 
     public ListaBAsAdapter(Context pContext, JSONArray pJSONArray) {
         this.mContext = pContext;
@@ -87,7 +89,40 @@ public class ListaBAsAdapter extends RecyclerView.Adapter<ListaBAsAdapter.ViewHo
     @Override
     public int getItemCount() { return mJSONArray.length(); }
 
-    public class ViewHolderListaBAs extends RecyclerView.ViewHolder {
+    public void setClickListener(RViewOnClickListener pListener) {
+        this.mClickListener = pListener;
+    }
+
+    public int[] getInfosBASelecionado(int pPosition) {
+        int[] dadosBA = new int[3]; //0-Numero; 1-Ano; 2-Número Cor
+        Util util = new Util();
+        try {
+            JSONObject json = this.mJSONArray.getJSONObject(pPosition);
+            dadosBA[0] = json.getInt("nr_manut");
+            dadosBA[1] = json.getInt("ano");
+
+            // Define cor do BA
+            SimpleDateFormat fmt = new SimpleDateFormat(FORMATO_DATA);
+            Date data = fmt.parse( json.getString("dt_encaminhamento")+ " " + json.getString("hr_encaminhamento") );
+            String tempoDecorrido = util.getDiferencaDatas(data, new Date());
+            if (tempoDecorrido.contains("d")) {
+                int dias = Integer.parseInt( tempoDecorrido.replace("d","") );
+                if (dias <= 2) dadosBA[2] = R.color.prazo_1;
+                else if (dias <= 7) dadosBA[2] = R.color.prazo_2;
+                else if (dias <= 15) dadosBA[2] = R.color.prazo_3;
+                else if (dias <= 30) dadosBA[2] = R.color.prazo_4;
+                else dadosBA[2] = R.color.prazo_5;
+            } else dadosBA[2] = R.color.prazo_1;
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return dadosBA;
+    }
+
+    public class ViewHolderListaBAs extends RecyclerView.ViewHolder implements View.OnClickListener {
         protected RelativeLayout mLeftPanel;
         protected TextView mNumeroBA;
         protected TextView mNomeDept;
@@ -109,6 +144,12 @@ public class ListaBAsAdapter extends RecyclerView.Adapter<ListaBAsAdapter.ViewHo
             this.mDescArea = (TextView)itemView.findViewById(R.id.tv_desc_area);
             this.mEquipPadrao = (TextView)itemView.findViewById(R.id.tv_equip_padrao);
             this.mDescProblema = (TextView)itemView.findViewById(R.id.tv_desc_problema);
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View view) {
+            if (mClickListener != null) mClickListener.onClickListener(view, getPosition());
         }
     }
 }

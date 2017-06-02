@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="br.gov.rj.riodasostras.sagas.activities.InformacoesBaActivity">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_numero_ba"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:textSize="22dp"
+                android:textStyle="bold"
+                android:textColor="#ffffffff"
+                android:fontFamily="sans-serif-condensed" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/borda_padrao">
+
+                <TextView
+                    android:id="@+id/tv_dados_boletim"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/borda_padrao"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:textSize="@dimen/fonte_titulo"
+                    android:textStyle="bold"
+                    android:text="Dados do Boletim"
+                    android:fontFamily="sans-serif-condensed" />
+
+                <TextView
+                    android:id="@+id/tv_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_dados_boletim"
+                    android:layout_marginBottom="@dimen/quebra_linha"
+                    android:textSize="@dimen/fonte_padrao"
+                    android:fontFamily="sans-serif-condensed"/>
+
+                <TextView
+                    android:id="@+id/tv_user_oper"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_status"
+                    android:layout_marginBottom="@dimen/quebra_linha"
+                    android:textSize="@dimen/fonte_padrao"
+                    android:fontFamily="sans-serif-condensed" />
+
+                <TextView
+                    android:id="@+id/tv_data_soli"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_user_oper"
+                    android:layout_marginBottom="@dimen/quebra_linha"
+                    android:textSize="@dimen/fonte_padrao"
+                    android:fontFamily="sans-serif-condensed" />
+
+                <TextView
+                    android:id="@+id/tv_nome_orgao"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_data_soli"
+                    android:layout_marginBottom="@dimen/quebra_linha"
+                    android:textSize="@dimen/fonte_padrao"
+                    android:fontFamily="sans-serif-condensed" />
+
+                <TextView
+                    android:id="@+id/tv_nome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_nome_orgao"
+                    android:layout_marginBottom="@dimen/quebra_linha"
+                    android:textSize="@dimen/fonte_padrao"
+                    android:fontFamily="sans-serif-condensed" />
+
+                <TextView
+                    android:id="@+id/tv_tel_usuario"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_nome"
+                    android:layout_marginBottom="@dimen/quebra_linha"
+                    android:textSize="@dimen/fonte_padrao"
+                    android:fontFamily="sans-serif-condensed"/>
+
+                <TextView
+                    android:id="@+id/tv_tipo_serv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_tel_usuario"
+                    android:layout_marginBottom="@dimen/quebra_linha"
+                    android:textSize="@dimen/fonte_padrao"
+                    android:fontFamily="sans-serif-condensed"/>
+
+                <TextView
+                    android:id="@+id/tv_nome_tieq"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_tipo_serv"
+                    android:layout_marginBottom="@dimen/quebra_linha"
+                    android:textSize="@dimen/fonte_padrao"
+                    android:fontFamily="sans-serif-condensed"/>
+
+                <TextView
+                    android:id="@+id/tv_nome_eqau"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_nome_tieq"
+                    android:layout_marginBottom="@dimen/quebra_linha"
+                    android:textSize="@dimen/fonte_padrao"
+                    android:fontFamily="sans-serif-condensed" />
+
+                <TextView
+                    android:id="@+id/tv_observacao"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_nome_eqau"
+                    android:layout_marginBottom="@dimen/quebra_linha"
+                    android:textSize="@dimen/fonte_padrao"
+                    android:fontFamily="sans-serif-condensed" />
+
+                <TextView
+                    android:id="@+id/tv_patrim_pmro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_observacao"
+                    android:layout_marginBottom="@dimen/quebra_linha"
+                    android:textSize="@dimen/fonte_padrao"
+                    android:fontFamily="sans-serif-condensed" />
+
+                <TextView
+                    android:id="@+id/tv_desc_problema"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_patrim_pmro"
+                    android:layout_marginBottom="@dimen/quebra_linha"
+                    android:textSize="@dimen/fonte_padrao"
+                    android:fontFamily="sans-serif-condensed" />
+
+                <TextView
+                    android:id="@+id/tv_desc_obs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_desc_problema"
+                    android:layout_marginBottom="@dimen/quebra_linha"
+                    android:textSize="@dimen/fonte_padrao"
+                    android:fontFamily="sans-serif-condensed" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_historico"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/borda_padrao"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:textSize="@dimen/fonte_titulo"
+                android:textStyle="bold"
+                android:text="Histórico do Atendimento"
+                android:fontFamily="sans-serif-condensed" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/borda_padrao">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:textSize="@dimen/fonte_titulo"
+                    android:textStyle="bold"
+                    android:textColor="#ffffffff"
+                    android:fontFamily="sans-serif-condensed"
+                    android:background="@color/prazo_1"
+                    android:text="1 - aflorindo (ALEX AMORIN FLORINDO) - 11d"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.constraint.ConstraintLayout>
